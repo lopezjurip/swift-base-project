@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F7A09761E6A3F6DA865AA42 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698F478B65BE7FE44131D5C1 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F05FE7D2D35F9875872D91B7 /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BF23B471C8B1ABCF2236C1 /* Pods_BaseProject.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F64210E51B277AFD00069B98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64210E41B277AFD00069B98 /* AppDelegate.swift */; };
 		F64210EA1B277AFD00069B98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64210E81B277AFD00069B98 /* Main.storyboard */; };
 		F64210EC1B277AFD00069B98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64210EB1B277AFD00069B98 /* Images.xcassets */; };
@@ -47,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7A09761E6A3F6DA865AA42 /* Pods.framework in Frameworks */,
+				F05FE7D2D35F9875872D91B7 /* Pods_BaseProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D9AFCE56056B9DAAFE87B2DA /* Embed Pods Frameworks */ = {
@@ -276,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
