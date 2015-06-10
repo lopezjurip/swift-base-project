@@ -53,13 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for object in Resource.allObjectsInRealm(realm) {
             if let resource = object as? Resource {
                 println("Text: " + resource.text)
-                println("Owner's name: " + resource.user!.name)
+                println("Owner's name: " + resource.user.name)
                 println("Followers: ")
                 
-                if let followers = resource.followers {
-                    for follower in followers {
-                        println("\tName: " + follower.name)
-                    }
+                for follower in resource.followers {
+                    println("\tName: " + follower.name)
                 }
                 
                 println("-"*10)

@@ -13,8 +13,9 @@ import Realm
 class Resource : RLMObject {
     dynamic var id: String = ""
     dynamic var text: String = ""
-    dynamic var user: User?
-    dynamic var followers: [User]?
+    dynamic var user: User = User()
+    dynamic var followers: [User] = [User]()
+    // let followers = List<User>()
     
     required convenience init?(_ map: Map) {
         self.init()
