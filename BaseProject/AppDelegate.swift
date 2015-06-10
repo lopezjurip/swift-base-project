@@ -11,7 +11,7 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 import SwiftyJSON
-import Realm
+import RealmSwift
 import Cent
 
 @UIApplicationMain
@@ -43,26 +43,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ]
         ])
         
-        let realm = RLMRealm.defaultRealm()
+        let realm = Realm()
         
-        realm.transactionWithBlock { () -> Void in
-            let resource : Resource? = Mapper<Resource>().map(json.dictionaryObject)
-            realm.addOrUpdateObject(resource)
+        realm.beginWrite()
+        let resource : Resource? = Mapper<Resource>().map(json.dictionaryObject)
+        if let validResource = resource {
+            realm.add(validResource)
         }
+        realm.commitWrite()
 
-        for object in Resource.allObjectsInRealm(realm) {
-            if let resource = object as? Resource {
-                println("Text: " + resource.text)
-                println("Owner's name: " + resource.user.name)
-                println("Followers: ")
-                
-                for follower in resource.followers {
-                    println("\tName: " + follower.name)
-                }
-                
-                println("-"*10)
-                println(resource)
+        for resource in realm.objects(Resource) {
+            println("Text: " + resource.text)
+            println("Owner's name: " + resource.user.name)
+            println("Followers: ")
+            
+            for follower in resource.followers {
+                println("\tName: " + follower.name)
             }
+            
+            println("-"*10)
+            println(resource)
         }
         
         return true

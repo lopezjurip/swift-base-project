@@ -8,9 +8,9 @@
 
 import UIKit
 import ObjectMapper
-import Realm
+import RealmSwift
 
-class User : RLMObject {
+class User : Object {
     dynamic var id: String = ""
     dynamic var name: String = ""
     

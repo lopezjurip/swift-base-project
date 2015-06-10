@@ -8,14 +8,14 @@
 
 import UIKit
 import ObjectMapper
-import Realm
+import RealmSwift
 
-class Resource : RLMObject {
+class Resource : Object {
     dynamic var id: String = ""
     dynamic var text: String = ""
     dynamic var user: User = User()
     dynamic var followers: [User] = [User]()
-    // let followers = List<User>()
+    // let followers2 = List<User>()
     
     required convenience init?(_ map: Map) {
         self.init()
@@ -33,6 +33,18 @@ extension Resource : Mappable {
         id              <- map["id"]
         text            <- map["text"]
         user            <- map["user"]
+        
+//        let transform = TransformOf<List<User>, String>(fromJSON: { (value: String?) -> List<User>? in
+//            // transform value from String? to Int?
+//            return value?.toInt()
+//            }, toJSON: { (value: Int?) -> String? in
+//                // transform value from Int? to String?
+//                if let value = value {
+//                    return String(value)
+//                }
+//                return nil
+//        })
+//        followers <- (map["followers"], transform)
         followers       <- map["followers"]
     }
 }
