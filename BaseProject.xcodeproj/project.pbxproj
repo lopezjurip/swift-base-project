@@ -14,6 +14,9 @@
 		F64210EC1B277AFD00069B98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64210EB1B277AFD00069B98 /* Images.xcassets */; };
 		F64210EF1B277AFD00069B98 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F64210ED1B277AFD00069B98 /* LaunchScreen.xib */; };
 		F64210FB1B277AFD00069B98 /* BaseProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64210FA1B277AFD00069B98 /* BaseProjectTests.swift */; };
+		F65CED811B27DDF200664A02 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CED801B27DDF200664A02 /* Resource.swift */; };
+		F65CED831B27DFDF00664A02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CED821B27DFDF00664A02 /* User.swift */; };
+		F65CED851B27E61100664A02 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CED841B27E61100664A02 /* RLMSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		F64210F41B277AFD00069B98 /* BaseProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64210F91B277AFD00069B98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F64210FA1B277AFD00069B98 /* BaseProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProjectTests.swift; sourceTree = "<group>"; };
+		F65CED801B27DDF200664A02 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		F65CED821B27DFDF00664A02 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F65CED841B27E61100664A02 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +110,12 @@
 			isa = PBXGroup;
 			children = (
 				F64210E41B277AFD00069B98 /* AppDelegate.swift */,
+				F65CED821B27DFDF00664A02 /* User.swift */,
+				F65CED801B27DDF200664A02 /* Resource.swift */,
 				F64210E81B277AFD00069B98 /* Main.storyboard */,
 				F64210EB1B277AFD00069B98 /* Images.xcassets */,
 				F64210ED1B277AFD00069B98 /* LaunchScreen.xib */,
+				F65CED841B27E61100664A02 /* RLMSupport.swift */,
 				F64210E21B277AFD00069B98 /* Supporting Files */,
 			);
 			path = BaseProject;
@@ -289,6 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64210E51B277AFD00069B98 /* AppDelegate.swift in Sources */,
+				F65CED811B27DDF200664A02 /* Resource.swift in Sources */,
+				F65CED831B27DFDF00664A02 /* User.swift in Sources */,
+				F65CED851B27E61100664A02 /* RLMSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

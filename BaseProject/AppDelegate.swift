@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
+import SwiftyJSON
+import Realm
+import Cent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +21,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let json = JSON([
+            "id": "1",
+            "text": "hello world",
+            "user":
+            [
+                "id": "2",
+                "name": "Lorena Ipsum"
+            ],
+            "followers":
+            [
+                [
+                    "id": "1",
+                    "name": "John Appleseed"
+                ],
+                [
+                    "id": "10",
+                    "name": "Juanito Perez"
+                ]
+            ]
+        ])
+        
+        let realm = RLMRealm.defaultRealm()
+        
+        realm.transactionWithBlock { () -> Void in
+            let resource : Resource? = Mapper<Resource>().map(json.dictionaryObject)
+            realm.addOrUpdateObject(resource)
+        }
+
+        for object in Resource.allObjectsInRealm(realm) {
+            if let resource = object as? Resource {
+                println("Text: " + resource.text)
+                println("Owner's name: " + resource.user!.name)
+                println("Followers: ")
+                
+                if let followers = resource.followers {
+                    for follower in followers {
+                        println("\tName: " + follower.name)
+                    }
+                }
+                
+                println("-"*10)
+                println(resource)
+            }
+        }
+        
         return true
     }
 
